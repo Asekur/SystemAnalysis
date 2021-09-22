@@ -12,9 +12,9 @@ import Foundation
 typealias PeriodAndAperiodicity = (period: Int32, aperiodicity: Int32)
 
 protocol LemerSequence {
-    func getMathExpectation() -> Double
-    func getDispersion() -> Double
-    func getStandardDeviation() -> Double
+//    func getMathExpectation() -> Double
+//    func getDispersion() -> Double
+//    func getStandardDeviation() -> Double
     func getXValues() -> [Double]
     func getYValues(totalCounts: Double) -> [Range<Double>: Double]
     func getIntervalLength() -> Double
@@ -40,17 +40,17 @@ class Sequence: LemerSequence {
     }
     
     // MARK: - Methods
-    func getMathExpectation() -> Double {
-        return values.mathExpectation(m: sequenceGenerator.m, n: Double(sequenceCount))
-    }
-    
-    func getDispersion() -> Double {
-        return values.dispersion(m: sequenceGenerator.m, n: Double(sequenceCount), mathExpectation: getMathExpectation())
-    }
-    
-    func getStandardDeviation() -> Double {
-        return values.standardDeviation(with: getDispersion())
-    }
+//    func getMathExpectation() -> Double {
+//        return values.mathExpectation(m: sequenceGenerator.m, n: Double(sequenceCount))
+//    }
+//
+//    func getDispersion() -> Double {
+//        return values.dispersion(m: sequenceGenerator.m, n: Double(sequenceCount), mathExpectation: getMathExpectation())
+//    }
+//
+//    func getStandardDeviation() -> Double {
+//        return values.standardDeviation(with: getDispersion())
+//    }
     
     func getXValues() -> [Double] {
         return self.xValues
@@ -127,5 +127,31 @@ class Sequence: LemerSequence {
             }
         }
         return 0
+    }
+}
+
+// MARK: - Double array
+extension Array where Element == Double {
+    func getIntervalLength() -> Double {
+        guard let max = self.max(),
+              let min = self.min() else { return 0.0 }
+        return (max - min) / Double(Constants.intervals)
+    }
+    
+    func getYValues() -> [Range<Double>: Double] {
+        guard let min = self.min() else { return [:] }
+        
+        let intervalLength = self.getIntervalLength()
+        var ordinates: [Range<Double>: Double] = [:]
+        
+        var initialRange = min
+        for _ in 1...Constants.intervals {
+            let range = initialRange..<(initialRange + intervalLength)
+            let mCount = Double(self.filter({ range.contains($0) }).count)
+            ordinates[range] = (mCount / Double(Constants.n))
+            initialRange += intervalLength
+        }
+        
+        return ordinates
     }
 }
