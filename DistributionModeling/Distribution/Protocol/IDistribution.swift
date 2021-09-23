@@ -10,8 +10,8 @@
 import Foundation
 
 protocol IDistribution {
-    func getValue(x: Double) -> Double
-//    func getMathEx() -> Double
-//    func getDispersion() -> Double
-//    func getStandardDeviation() -> Double
+    func getXValue(rArray: [Double]) -> [Double]
+    func getMathEx() -> Double
+    func getDispersion() -> Double
+    func getStandardDeviation() -> Double
 }

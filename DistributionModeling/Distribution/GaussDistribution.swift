@@ -22,9 +22,29 @@ class GaussDistribution: IDistribution {
     }
     
     // MARK: - Methods
-    func getValue(x: Double) -> Double {
-        let a = (1 / sigma * sqrt(2.0 * Double.pi))
-        let b = exp(-(pow((x - m), 2) / 2 * pow(sigma, 2)))
-        return pow(a, b)
+    func getXValue(rArray: [Double]) -> [Double] {
+        let amountR = 6
+        var gauss = [Double]()
+        for _ in 0..<Constants.n {
+            var tmpSumR = 0.0
+            for _ in 0..<amountR {
+                tmpSumR += (rArray.randomElement() ?? 1.0)
+            }
+            let subValue = (tmpSumR - Double(amountR) / 2.0)
+            gauss.append(m + sigma * sqrt(12.0 / Double(amountR)) * subValue)
+        }
+        return gauss
+    }
+    
+    func getMathEx() -> Double {
+        return m
+    }
+    
+    func getDispersion() -> Double {
+        return pow(sigma, 2.0)
+    }
+    
+    func getStandardDeviation() -> Double {
+        return sigma
     }
 }

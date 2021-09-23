@@ -22,16 +22,27 @@ class GammaDistribution: IDistribution {
     }
     
     // MARK: - Methods
-    func getValue(x: Double) -> Double {
-        return x > 0 ? pow(lambda, Double(n)) / Double((n - 1).factorial()) * pow(x, Double(n - 1)) * exp(-1.0 * lambda * x)
-                     : 0.0
+    func getXValue(rArray: [Double]) -> [Double] {
+        var gamma = [Double]()
+        for _ in 0..<Constants.n {
+            var tmpMulR = 1.0
+            for _ in 0..<n {
+                tmpMulR *= rArray.randomElement() ?? 1.0
+            }
+            gamma.append(-log(tmpMulR) / lambda)
+        }
+        return gamma
     }
-}
-
-extension Int {
-    func factorial() -> Int {
-        guard self != 0 else { return 1 }
-
-        return (1...self).reduce(1, { $0 * $1 })
+    
+    func getMathEx() -> Double {
+        return Double(n) / lambda
+    }
+    
+    func getDispersion() -> Double {
+        return Double(n) / pow(lambda, 2.0)
+    }
+    
+    func getStandardDeviation() -> Double {
+        return sqrt(Double(n)) / lambda
     }
 }

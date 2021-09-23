@@ -827,7 +827,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tqw-XD-Mop">
-                                <rect key="frame" x="184" y="331" width="84" height="32"/>
+                                <rect key="frame" x="184" y="331" width="83" height="32"/>
                                 <buttonCell key="cell" type="push" title="Process" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1Qt-tL-CFZ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -837,7 +837,7 @@
                                 </connections>
                             </button>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="sKR-d4-A6D" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="301" y="30" width="631" height="382"/>
+                                <rect key="frame" x="300" y="30" width="632" height="382"/>
                             </customView>
                         </subviews>
                         <constraints>

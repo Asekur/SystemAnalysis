@@ -10,6 +10,6 @@
 import Foundation
 
 struct Constants {
-    static let n = 10000
+    static let n = 100000
     static let intervals = 20
 }

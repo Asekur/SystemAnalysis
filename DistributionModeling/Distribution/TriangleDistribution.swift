@@ -1,15 +1,13 @@
 //
-// UniformDistribution.swift
-// DistributionModeling
+//  TriangleDistribution.swift
+//  DistributionModeling
 //
-// Created by Ilya Baryko on 22.09.21.
-// 
+//  Created by Chegelik on 23.09.2021.
 //
-
 
 import Foundation
 
-class UniformDistribution: IDistribution {
+class TriangleDistribution: IDistribution {
     
     // MARK: - Properties
     private var a: Double
@@ -23,22 +21,24 @@ class UniformDistribution: IDistribution {
     
     // MARK: - Methods
     func getXValue(rArray: [Double]) -> [Double] {
-        var uniform = [Double]()
+        var triangle = [Double]()
         for _ in 0..<Constants.n {
-            uniform.append(a + (b - a) * (rArray.randomElement() ?? 1.0))
+            let tmpR1 = (rArray.randomElement() ?? 1.0)
+            let tmpR2 = (rArray.randomElement() ?? 1.0)
+            triangle.append(a + (b - a) * max(tmpR1, tmpR2))
         }
-        return uniform
+        return triangle
     }
     
     func getMathEx() -> Double {
-        return (a + b) / 2.0
+        return 0.0
     }
     
     func getDispersion() -> Double {
-        return pow(b - a, 2.0) / 12.0
+        return 0.0
     }
     
     func getStandardDeviation() -> Double {
-        return (b - a) / sqrt(12.0)
+        return 0.0
     }
 }

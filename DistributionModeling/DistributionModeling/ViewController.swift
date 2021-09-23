@@ -67,25 +67,23 @@ class ViewController: NSViewController {
         let firstParam = self.firstParamTextField.doubleValue
         let secondParam = self.secondParamTextField.doubleValue
         
-        var resultArray = [Double]()
+        var resultXArray = [Double]()
         switch self.selectedType {
         case .uniform:
-            resultArray = SequencesDistribution.getUniformDistribuion(lemerSequence.getXValues(), firstParam, secondParam)
             self.distribution = UniformDistribution(a: firstParam, b: secondParam)
         case .gauss:
-            resultArray = SequencesDistribution.getGaussDistribution(lemerSequence.getXValues(), firstParam, secondParam)
             self.distribution = GaussDistribution(m: firstParam, sigma: secondParam)
         case .exp:
-            resultArray = SequencesDistribution.getExponentialDistribution(lemerSequence.getXValues(), secondParam)
+            self.distribution = ExpDistribution(lambda: secondParam)
         case .gamma:
-            resultArray = SequencesDistribution.getGammaDistribution(lemerSequence.getXValues(), Int(firstParam), secondParam)
+            self.distribution = GammaDistribution(n: firstParam, lambda: secondParam)
         case .triangle:
-            resultArray = SequencesDistribution.getTriangleDistribution(lemerSequence.getXValues(), firstParam, secondParam)
+            self.distribution = TriangleDistribution(a: firstParam, b: secondParam)
         case .sympson:
-            resultArray = SequencesDistribution.getSympsonDistribution(lemerSequence.getXValues(), firstParam, secondParam)
+            self.distribution = SympsonDistribution(a: firstParam, b: secondParam)
         }
-        
-        self.setupDataSet(with: resultArray)
+        resultXArray = distribution?.getXValue(rArray: lemerSequence.getXValues()) ?? []
+        self.setupDataSet(with: resultXArray)
     }
     
     // MARK: - Methods
@@ -100,17 +98,21 @@ class ViewController: NSViewController {
         self.setupChart()
     }
     
-    private func setupDataSet(with array: [Double]) {
-        let barValues = array.map({ BarChartDataEntry(x: $0, y: self.distribution?.getValue(x: $0) ?? 0.0) })
+    private func setupDataSet(with arrayX: [Double]) {
+        let barValues = arrayX.getYValues().map { dict -> BarChartDataEntry in
+            let midValue = (dict.key.upperBound + dict.key.lowerBound) / 2
+            return BarChartDataEntry(x: midValue, y: dict.value)
+        }
+    
         let data = BarChartData()
         let dataSet = BarChartDataSet(entries: barValues, label: "")
         dataSet.drawValuesEnabled = false
         dataSet.colors = [.blue]
 
         data.addDataSet(dataSet)
-        data.barWidth = array.getIntervalLength()
+        data.barWidth = arrayX.getIntervalLength()
         self.barChartView.data = data
-//        self.setBottomTextFields(seq: sequence)
+        //self.setBottomTextFields(seq: arrayX)
     }
     
     private func setupChart() {

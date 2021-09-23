@@ -7,18 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00113F3284603FE303524CDA /* Pods_DistributionModelingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E219D439A0B0B1CDE466CC /* Pods_DistributionModelingTests.framework */; };
-		6D66AD8DC58F9AFF00DEB194 /* Pods_DistributionModeling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 978E41508B2EF7D8B5930489 /* Pods_DistributionModeling.framework */; };
-		75691DB9EE3D90BD1FA31F16 /* Pods_DistributionModeling_DistributionModelingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94BD9321724904D403B9FDF /* Pods_DistributionModeling_DistributionModelingUITests.framework */; };
+		1922214C02322F69E8412324 /* Pods_DistributionModeling_DistributionModelingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F120CED5A0FF715C7EBD94 /* Pods_DistributionModeling_DistributionModelingUITests.framework */; };
+		54B2A129C28DD6A86A745713 /* Pods_DistributionModelingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DD3012D64A1FF59678FB4A /* Pods_DistributionModelingTests.framework */; };
 		843BF6AC26F737B200B26CBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BF6AB26F737B200B26CBD /* AppDelegate.swift */; };
 		843BF6AE26F737B200B26CBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BF6AD26F737B200B26CBD /* ViewController.swift */; };
 		843BF6B026F737B300B26CBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843BF6AF26F737B300B26CBD /* Assets.xcassets */; };
 		843BF6B326F737B300B26CBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843BF6B126F737B300B26CBD /* Main.storyboard */; };
 		843BF6BF26F737B300B26CBD /* DistributionModelingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BF6BE26F737B300B26CBD /* DistributionModelingTests.swift */; };
 		843BF6CA26F737B300B26CBD /* DistributionModelingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BF6C926F737B300B26CBD /* DistributionModelingUITests.swift */; };
-		843BF6D926F7387400B26CBD /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BF6D826F7387400B26CBD /* Calculations.swift */; };
 		8446689826F7C292000E31C5 /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446689626F7C292000E31C5 /* Sequence.swift */; };
 		8446689926F7C292000E31C5 /* SequenceGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446689726F7C292000E31C5 /* SequenceGenerator.swift */; };
+		84D6668226FC9D4000531CD2 /* ExpDistribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6668126FC9D4000531CD2 /* ExpDistribution.swift */; };
+		84D6668426FC9DD100531CD2 /* TriangleDistribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6668326FC9DD100531CD2 /* TriangleDistribution.swift */; };
+		84D6668626FC9E4A00531CD2 /* SympsonDistribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6668526FC9E4A00531CD2 /* SympsonDistribution.swift */; };
+		9B9B0B8BCA4EFE3AE0999E29 /* Pods_DistributionModeling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E43D7982CAFDE9CCDC87BF /* Pods_DistributionModeling.framework */; };
 		CAB2BED326FBA42F00580FF5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB2BED226FBA42F00580FF5 /* Constants.swift */; };
 		CAB2BED726FBB3F500580FF5 /* IDistribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB2BED626FBB3F500580FF5 /* IDistribution.swift */; };
 		CAB2BED926FBB42100580FF5 /* UniformDistribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB2BED826FBB42100580FF5 /* UniformDistribution.swift */; };
@@ -44,6 +46,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06704A5317DDE8B2858699CF /* Pods-DistributionModelingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DistributionModelingTests.release.xcconfig"; path = "Target Support Files/Pods-DistributionModelingTests/Pods-DistributionModelingTests.release.xcconfig"; sourceTree = "<group>"; };
+		21F120CED5A0FF715C7EBD94 /* Pods_DistributionModeling_DistributionModelingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DistributionModeling_DistributionModelingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		366B6752757E37142E174DF7 /* Pods-DistributionModeling-DistributionModelingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DistributionModeling-DistributionModelingUITests.debug.xcconfig"; path = "Target Support Files/Pods-DistributionModeling-DistributionModelingUITests/Pods-DistributionModeling-DistributionModelingUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3FB059A654D4BD8E3AD98D5E /* Pods-DistributionModeling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DistributionModeling.release.xcconfig"; path = "Target Support Files/Pods-DistributionModeling/Pods-DistributionModeling.release.xcconfig"; sourceTree = "<group>"; };
+		4D51415D29B89163A07B239C /* Pods-DistributionModeling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DistributionModeling.debug.xcconfig"; path = "Target Support Files/Pods-DistributionModeling/Pods-DistributionModeling.debug.xcconfig"; sourceTree = "<group>"; };
+		52DD3012D64A1FF59678FB4A /* Pods_DistributionModelingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DistributionModelingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		843BF6A826F737B200B26CBD /* DistributionModeling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DistributionModeling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		843BF6AB26F737B200B26CBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		843BF6AD26F737B200B26CBD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,23 +65,19 @@
 		843BF6C526F737B300B26CBD /* DistributionModelingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DistributionModelingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		843BF6C926F737B300B26CBD /* DistributionModelingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributionModelingUITests.swift; sourceTree = "<group>"; };
 		843BF6CB26F737B300B26CBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		843BF6D826F7387400B26CBD /* Calculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculations.swift; sourceTree = "<group>"; };
 		8446689626F7C292000E31C5 /* Sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
 		8446689726F7C292000E31C5 /* SequenceGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceGenerator.swift; sourceTree = "<group>"; };
-		8DF29BD6FB11349DC968F426 /* Pods-DistributionModelingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DistributionModelingTests.release.xcconfig"; path = "Target Support Files/Pods-DistributionModelingTests/Pods-DistributionModelingTests.release.xcconfig"; sourceTree = "<group>"; };
-		978E41508B2EF7D8B5930489 /* Pods_DistributionModeling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DistributionModeling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC8D758D20910BC283CB3F1C /* Pods-DistributionModeling-DistributionModelingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DistributionModeling-DistributionModelingUITests.debug.xcconfig"; path = "Target Support Files/Pods-DistributionModeling-DistributionModelingUITests/Pods-DistributionModeling-DistributionModelingUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		B7CBDBC471D72CFF55C2728A /* Pods-DistributionModeling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DistributionModeling.debug.xcconfig"; path = "Target Support Files/Pods-DistributionModeling/Pods-DistributionModeling.debug.xcconfig"; sourceTree = "<group>"; };
-		BE8F316EF2EF2EE9641563C9 /* Pods-DistributionModeling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DistributionModeling.release.xcconfig"; path = "Target Support Files/Pods-DistributionModeling/Pods-DistributionModeling.release.xcconfig"; sourceTree = "<group>"; };
-		C5E219D439A0B0B1CDE466CC /* Pods_DistributionModelingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DistributionModelingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C6F13E4B9B4170A3531E0E3C /* Pods-DistributionModelingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DistributionModelingTests.debug.xcconfig"; path = "Target Support Files/Pods-DistributionModelingTests/Pods-DistributionModelingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		84D6668126FC9D4000531CD2 /* ExpDistribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpDistribution.swift; sourceTree = "<group>"; };
+		84D6668326FC9DD100531CD2 /* TriangleDistribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleDistribution.swift; sourceTree = "<group>"; };
+		84D6668526FC9E4A00531CD2 /* SympsonDistribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SympsonDistribution.swift; sourceTree = "<group>"; };
+		B0C55D006D06B88AED74D580 /* Pods-DistributionModelingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DistributionModelingTests.debug.xcconfig"; path = "Target Support Files/Pods-DistributionModelingTests/Pods-DistributionModelingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B71456F18F2ADF75DCBA47DC /* Pods-DistributionModeling-DistributionModelingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DistributionModeling-DistributionModelingUITests.release.xcconfig"; path = "Target Support Files/Pods-DistributionModeling-DistributionModelingUITests/Pods-DistributionModeling-DistributionModelingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CAB2BED226FBA42F00580FF5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CAB2BED626FBB3F500580FF5 /* IDistribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDistribution.swift; sourceTree = "<group>"; };
 		CAB2BED826FBB42100580FF5 /* UniformDistribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniformDistribution.swift; sourceTree = "<group>"; };
 		CAB2BEDB26FBB55700580FF5 /* GaussDistribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaussDistribution.swift; sourceTree = "<group>"; };
 		CAB2BEDD26FBBBE800580FF5 /* GammaDistribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GammaDistribution.swift; sourceTree = "<group>"; };
-		E94BD9321724904D403B9FDF /* Pods_DistributionModeling_DistributionModelingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DistributionModeling_DistributionModelingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FEF36398BF47E74C3562C076 /* Pods-DistributionModeling-DistributionModelingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DistributionModeling-DistributionModelingUITests.release.xcconfig"; path = "Target Support Files/Pods-DistributionModeling-DistributionModelingUITests/Pods-DistributionModeling-DistributionModelingUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F4E43D7982CAFDE9CCDC87BF /* Pods_DistributionModeling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DistributionModeling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D66AD8DC58F9AFF00DEB194 /* Pods_DistributionModeling.framework in Frameworks */,
+				9B9B0B8BCA4EFE3AE0999E29 /* Pods_DistributionModeling.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00113F3284603FE303524CDA /* Pods_DistributionModelingTests.framework in Frameworks */,
+				54B2A129C28DD6A86A745713 /* Pods_DistributionModelingTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,24 +101,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75691DB9EE3D90BD1FA31F16 /* Pods_DistributionModeling_DistributionModelingUITests.framework in Frameworks */,
+				1922214C02322F69E8412324 /* Pods_DistributionModeling_DistributionModelingUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5912DF4270407643F1392254 /* Pods */ = {
+		11A7A788C5DF0F4018C9829F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B7CBDBC471D72CFF55C2728A /* Pods-DistributionModeling.debug.xcconfig */,
-				BE8F316EF2EF2EE9641563C9 /* Pods-DistributionModeling.release.xcconfig */,
-				AC8D758D20910BC283CB3F1C /* Pods-DistributionModeling-DistributionModelingUITests.debug.xcconfig */,
-				FEF36398BF47E74C3562C076 /* Pods-DistributionModeling-DistributionModelingUITests.release.xcconfig */,
-				C6F13E4B9B4170A3531E0E3C /* Pods-DistributionModelingTests.debug.xcconfig */,
-				8DF29BD6FB11349DC968F426 /* Pods-DistributionModelingTests.release.xcconfig */,
+				4D51415D29B89163A07B239C /* Pods-DistributionModeling.debug.xcconfig */,
+				3FB059A654D4BD8E3AD98D5E /* Pods-DistributionModeling.release.xcconfig */,
+				366B6752757E37142E174DF7 /* Pods-DistributionModeling-DistributionModelingUITests.debug.xcconfig */,
+				B71456F18F2ADF75DCBA47DC /* Pods-DistributionModeling-DistributionModelingUITests.release.xcconfig */,
+				B0C55D006D06B88AED74D580 /* Pods-DistributionModelingTests.debug.xcconfig */,
+				06704A5317DDE8B2858699CF /* Pods-DistributionModelingTests.release.xcconfig */,
 			);
+			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		18ED4C20E76B9869C97C34A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4E43D7982CAFDE9CCDC87BF /* Pods_DistributionModeling.framework */,
+				21F120CED5A0FF715C7EBD94 /* Pods_DistributionModeling_DistributionModelingUITests.framework */,
+				52DD3012D64A1FF59678FB4A /* Pods_DistributionModelingTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		843BF69F26F737B200B26CBD = {
@@ -126,8 +141,8 @@
 				843BF6BD26F737B300B26CBD /* DistributionModelingTests */,
 				843BF6C826F737B300B26CBD /* DistributionModelingUITests */,
 				843BF6A926F737B200B26CBD /* Products */,
-				5912DF4270407643F1392254 /* Pods */,
-				FFA0ECEA67911F5EEC9BB1C3 /* Frameworks */,
+				11A7A788C5DF0F4018C9829F /* Pods */,
+				18ED4C20E76B9869C97C34A6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -177,7 +192,10 @@
 			children = (
 				CAB2BED826FBB42100580FF5 /* UniformDistribution.swift */,
 				CAB2BEDB26FBB55700580FF5 /* GaussDistribution.swift */,
+				84D6668126FC9D4000531CD2 /* ExpDistribution.swift */,
 				CAB2BEDD26FBBBE800580FF5 /* GammaDistribution.swift */,
+				84D6668326FC9DD100531CD2 /* TriangleDistribution.swift */,
+				84D6668526FC9E4A00531CD2 /* SympsonDistribution.swift */,
 				CAB2BEDA26FBB4CC00580FF5 /* Protocol */,
 			);
 			path = Distribution;
@@ -186,7 +204,6 @@
 		CAB2BED126FBA42500580FF5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				843BF6D826F7387400B26CBD /* Calculations.swift */,
 				8446689626F7C292000E31C5 /* Sequence.swift */,
 				8446689726F7C292000E31C5 /* SequenceGenerator.swift */,
 				CAB2BED226FBA42F00580FF5 /* Constants.swift */,
@@ -200,16 +217,6 @@
 				CAB2BED626FBB3F500580FF5 /* IDistribution.swift */,
 			);
 			path = Protocol;
-			sourceTree = "<group>";
-		};
-		FFA0ECEA67911F5EEC9BB1C3 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				978E41508B2EF7D8B5930489 /* Pods_DistributionModeling.framework */,
-				E94BD9321724904D403B9FDF /* Pods_DistributionModeling_DistributionModelingUITests.framework */,
-				C5E219D439A0B0B1CDE466CC /* Pods_DistributionModelingTests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,14 +458,16 @@
 			files = (
 				843BF6AE26F737B200B26CBD /* ViewController.swift in Sources */,
 				8446689926F7C292000E31C5 /* SequenceGenerator.swift in Sources */,
-				843BF6D926F7387400B26CBD /* Calculations.swift in Sources */,
 				CAB2BED726FBB3F500580FF5 /* IDistribution.swift in Sources */,
 				CAB2BED926FBB42100580FF5 /* UniformDistribution.swift in Sources */,
+				84D6668226FC9D4000531CD2 /* ExpDistribution.swift in Sources */,
 				CAB2BEDC26FBB55700580FF5 /* GaussDistribution.swift in Sources */,
+				84D6668626FC9E4A00531CD2 /* SympsonDistribution.swift in Sources */,
 				8446689826F7C292000E31C5 /* Sequence.swift in Sources */,
 				CAB2BEDE26FBBBE800580FF5 /* GammaDistribution.swift in Sources */,
 				843BF6AC26F737B200B26CBD /* AppDelegate.swift in Sources */,
 				CAB2BED326FBA42F00580FF5 /* Constants.swift in Sources */,
+				84D6668426FC9DD100531CD2 /* TriangleDistribution.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,7 +631,7 @@
 		};
 		843BF6CF26F737B300B26CBD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B7CBDBC471D72CFF55C2728A /* Pods-DistributionModeling.debug.xcconfig */;
+			baseConfigurationReference = 4D51415D29B89163A07B239C /* Pods-DistributionModeling.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -642,7 +651,7 @@
 		};
 		843BF6D026F737B300B26CBD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE8F316EF2EF2EE9641563C9 /* Pods-DistributionModeling.release.xcconfig */;
+			baseConfigurationReference = 3FB059A654D4BD8E3AD98D5E /* Pods-DistributionModeling.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -662,7 +671,7 @@
 		};
 		843BF6D226F737B300B26CBD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6F13E4B9B4170A3531E0E3C /* Pods-DistributionModelingTests.debug.xcconfig */;
+			baseConfigurationReference = B0C55D006D06B88AED74D580 /* Pods-DistributionModelingTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -684,7 +693,7 @@
 		};
 		843BF6D326F737B300B26CBD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8DF29BD6FB11349DC968F426 /* Pods-DistributionModelingTests.release.xcconfig */;
+			baseConfigurationReference = 06704A5317DDE8B2858699CF /* Pods-DistributionModelingTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -706,7 +715,7 @@
 		};
 		843BF6D526F737B300B26CBD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC8D758D20910BC283CB3F1C /* Pods-DistributionModeling-DistributionModelingUITests.debug.xcconfig */;
+			baseConfigurationReference = 366B6752757E37142E174DF7 /* Pods-DistributionModeling-DistributionModelingUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -726,7 +735,7 @@
 		};
 		843BF6D626F737B300B26CBD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FEF36398BF47E74C3562C076 /* Pods-DistributionModeling-DistributionModelingUITests.release.xcconfig */;
+			baseConfigurationReference = B71456F18F2ADF75DCBA47DC /* Pods-DistributionModeling-DistributionModelingUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
