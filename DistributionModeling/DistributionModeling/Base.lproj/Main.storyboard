@@ -827,7 +827,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tqw-XD-Mop">
-                                <rect key="frame" x="184" y="331" width="83" height="32"/>
+                                <rect key="frame" x="184" y="331" width="84" height="32"/>
                                 <buttonCell key="cell" type="push" title="Process" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1Qt-tL-CFZ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -837,7 +837,7 @@
                                 </connections>
                             </button>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="sKR-d4-A6D" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="300" y="30" width="632" height="382"/>
+                                <rect key="frame" x="301" y="30" width="631" height="382"/>
                             </customView>
                         </subviews>
                         <constraints>
@@ -873,11 +873,14 @@
                     </view>
                     <connections>
                         <outlet property="barChartView" destination="sKR-d4-A6D" id="pai-QB-9gr"/>
+                        <outlet property="dispersionTextField" destination="5Wu-de-ose" id="zlP-yV-bn4"/>
                         <outlet property="firstParamLabel" destination="WHP-E7-XWa" id="bOS-VK-HgQ"/>
                         <outlet property="firstParamTextField" destination="dZ3-C2-soS" id="IAo-gk-jgq"/>
+                        <outlet property="mathTextField" destination="3Sb-nw-ChA" id="ahU-lv-ae5"/>
                         <outlet property="secondParamLabel" destination="e8j-4E-xo8" id="KhG-vf-s1b"/>
                         <outlet property="secondParamTextField" destination="Ske-pW-rbM" id="Gpz-Wa-qMT"/>
                         <outlet property="segmentControl" destination="tGB-lk-t9q" id="Lk7-76-qit"/>
+                        <outlet property="standardDeviationTextField" destination="U62-Hz-ROW" id="rVR-FO-Scx"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

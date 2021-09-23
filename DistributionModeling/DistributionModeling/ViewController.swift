@@ -27,6 +27,9 @@ class ViewController: NSViewController {
     @IBOutlet private weak var secondParamTextField: NSTextField!
     @IBOutlet private weak var segmentControl: NSSegmentedControl!
     @IBOutlet private weak var barChartView: BarChartView!
+    @IBOutlet private weak var mathTextField: NSTextField!
+    @IBOutlet private weak var dispersionTextField: NSTextField!
+    @IBOutlet private weak var standardDeviationTextField: NSTextField!
     
     // MARK: - Properties
     private var lemerSequence: LemerSequence!
@@ -59,6 +62,7 @@ class ViewController: NSViewController {
             self.setupParams(firstLabel: "a", secondLabel: "b")
         }
         
+        self.resetTextField()
         self.barChartView.clearValues()
         self.selectedType = type
     }
@@ -119,7 +123,19 @@ class ViewController: NSViewController {
         data.barWidth = arrayX.getIntervalLength()
         self.barChartView.data = data
         self.setAxis(min: min, max: max)
-        //self.setBottomTextFields(seq: arrayX)
+        self.setBottomTextFields()
+    }
+    
+    private func setBottomTextFields() {
+        self.mathTextField.doubleValue = self.distribution?.getMathEx() ?? 0.0
+        self.dispersionTextField.doubleValue = self.distribution?.getDispersion() ?? 0.0
+        self.standardDeviationTextField.doubleValue = self.distribution?.getStandardDeviation() ?? 0.0
+    }
+    
+    private func resetTextField() {
+        self.mathTextField.stringValue = ""
+        self.dispersionTextField.stringValue = ""
+        self.standardDeviationTextField.stringValue = ""
     }
     
     private func setAxis(min: Double, max: Double) {
@@ -129,14 +145,13 @@ class ViewController: NSViewController {
     
     private func setupChart() {
         self.barChartView.xAxis.axisMinimum = 0.0
-        self.barChartView.xAxis.axisMaximum = 30.0
+        self.barChartView.xAxis.axisMaximum = 5.0
         self.barChartView.leftAxis.axisMinimum = 0.0
         self.barChartView.rightAxis.enabled = false
         self.barChartView.xAxis.labelPosition = .bottom
         self.barChartView.drawGridBackgroundEnabled = false
     }
 }
-
 
 // MARK: Extentions
 extension Double {
