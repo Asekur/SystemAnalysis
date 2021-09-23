@@ -95,11 +95,17 @@ class ViewController: NSViewController {
     private func setupUI() {
         self.selectedType = .uniform
         self.segmentControl.selectedSegment = 0
+        self.didTapOnOption(self.segmentControl)
         self.setupChart()
     }
     
     private func setupDataSet(with arrayX: [Double]) {
+        
+        var min = 0.0
+        var max = 1.0
         let barValues = arrayX.getYValues().map { dict -> BarChartDataEntry in
+            min = min > dict.key.lowerBound ? dict.key.lowerBound : min
+            max = max < dict.key.upperBound ? (dict.key.upperBound + 1) : max
             let midValue = (dict.key.upperBound + dict.key.lowerBound) / 2
             return BarChartDataEntry(x: midValue, y: dict.value)
         }
@@ -112,7 +118,13 @@ class ViewController: NSViewController {
         data.addDataSet(dataSet)
         data.barWidth = arrayX.getIntervalLength()
         self.barChartView.data = data
+        self.setAxis(min: min, max: max)
         //self.setBottomTextFields(seq: arrayX)
+    }
+    
+    private func setAxis(min: Double, max: Double) {
+        self.barChartView.xAxis.axisMinimum = min
+        self.barChartView.xAxis.axisMaximum = max
     }
     
     private func setupChart() {
