@@ -24,8 +24,8 @@ class UniformDistribution: IDistribution {
     // MARK: - Methods
     func getXValue(rArray: [Double]) -> [Double] {
         var uniform = [Double]()
-        for _ in 0..<Constants.n {
-            uniform.append(a + (b - a) * (rArray.randomElement() ?? 1.0))
+        for index in 0..<Constants.n {
+            uniform.append(a + (b - a) * rArray[index])
         }
         return uniform
     }

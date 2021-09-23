@@ -37,7 +37,7 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.lemerSequence = Sequence(m: 5.0, a: 3.0, r0: 1.0, n: Constants.n)
+        self.lemerSequence = Sequence(m: 1046527.0, a: 65537.0, r0: 32771.0, n: Constants.n)
         self.setupUI()
     }
     
@@ -82,7 +82,7 @@ class ViewController: NSViewController {
         case .sympson:
             self.distribution = SympsonDistribution(a: firstParam, b: secondParam)
         }
-        resultXArray = distribution?.getXValue(rArray: lemerSequence.getXValues()) ?? []
+        resultXArray = (distribution?.getXValue(rArray: lemerSequence.getXValues()) ?? []).map { $0.rounded(toPlaces: 2)}
         self.setupDataSet(with: resultXArray)
     }
     
@@ -117,7 +117,7 @@ class ViewController: NSViewController {
     
     private func setupChart() {
         self.barChartView.xAxis.axisMinimum = 0.0
-        self.barChartView.xAxis.axisMaximum = 2.0
+        self.barChartView.xAxis.axisMaximum = 30.0
         self.barChartView.leftAxis.axisMinimum = 0.0
         self.barChartView.rightAxis.enabled = false
         self.barChartView.xAxis.labelPosition = .bottom
@@ -125,3 +125,11 @@ class ViewController: NSViewController {
     }
 }
 
+
+// MARK: Extentions
+extension Double {
+    func rounded(toPlaces places: Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
+    }
+}
