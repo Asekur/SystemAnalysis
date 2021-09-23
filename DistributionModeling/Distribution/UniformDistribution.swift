@@ -14,6 +14,9 @@ class UniformDistribution: IDistribution {
     // MARK: - Properties
     private var a: Double
     private var b: Double
+    private var math: Double = 0.0
+    private var dispersion: Double = 0.0
+    private var standardDeviation: Double = 0.0
     
     // MARK: - Init
     init(a: Double, b: Double) {
@@ -27,18 +30,23 @@ class UniformDistribution: IDistribution {
         for index in 0..<Constants.n {
             uniform.append(a + (b - a) * rArray[index])
         }
+        
+        self.math = self.calculateMathExpectation(array: uniform)
+        self.dispersion = self.calculateDispertion(array: uniform, me: self.math)
+        self.standardDeviation = self.calculateStandardDeviation(dispersion: self.dispersion)
+        
         return uniform
     }
     
     func getMathEx() -> Double {
-        return (a + b) / 2.0
+        return self.math
     }
     
     func getDispersion() -> Double {
-        return pow(b - a, 2.0) / 12.0
+        return self.dispersion
     }
     
     func getStandardDeviation() -> Double {
-        return (b - a) / sqrt(12.0)
+        return self.standardDeviation
     }
 }

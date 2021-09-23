@@ -14,6 +14,9 @@ class GammaDistribution: IDistribution {
     // MARK: - Properties
     private var n: Int
     private var lambda: Double
+    private var math: Double = 0.0
+    private var dispersion: Double = 0.0
+    private var standardDeviation: Double = 0.0
     
     // MARK: - Init
     init(n: Double, lambda: Double) {
@@ -31,18 +34,23 @@ class GammaDistribution: IDistribution {
             }
             gamma.append(-log(tmpMulR) / lambda)
         }
+        
+        self.math = self.calculateMathExpectation(array: gamma)
+        self.dispersion = self.calculateDispertion(array: gamma, me: self.math)
+        self.standardDeviation = self.calculateStandardDeviation(dispersion: self.dispersion)
+        
         return gamma
     }
     
     func getMathEx() -> Double {
-        return Double(n) / lambda
+        return self.math
     }
     
     func getDispersion() -> Double {
-        return Double(n) / pow(lambda, 2.0)
+        return self.dispersion
     }
     
     func getStandardDeviation() -> Double {
-        return sqrt(Double(n)) / lambda
+        return self.standardDeviation
     }
 }

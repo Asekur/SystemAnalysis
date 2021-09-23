@@ -11,6 +11,9 @@ class ExpDistribution: IDistribution {
     
     // MARK: - Properties
     private var lambda: Double
+    private var math: Double = 0.0
+    private var dispersion: Double = 0.0
+    private var standardDeviation: Double = 0.0
     
     // MARK: - Init
     init(lambda: Double) {
@@ -23,18 +26,23 @@ class ExpDistribution: IDistribution {
         for _ in 0..<Constants.n {
             exponential.append(-log(rArray.randomElement() ?? 1.0) / lambda)
         }
+        
+        self.math = self.calculateMathExpectation(array: exponential)
+        self.dispersion = self.calculateDispertion(array: exponential, me: self.math)
+        self.standardDeviation = self.calculateStandardDeviation(dispersion: self.dispersion)
+        
         return exponential
     }
     
     func getMathEx() -> Double {
-        return 1.0 / lambda
+        return self.math
     }
     
     func getDispersion() -> Double {
-        return 1.0 / pow(lambda, 2.0)
+        return self.dispersion
     }
     
     func getStandardDeviation() -> Double {
-        return 1.0 / lambda
+        return self.standardDeviation
     }
 }

@@ -12,6 +12,9 @@ class TriangleDistribution: IDistribution {
     // MARK: - Properties
     private var a: Double
     private var b: Double
+    private var math: Double = 0.0
+    private var dispersion: Double = 0.0
+    private var standardDeviation: Double = 0.0
     
     // MARK: - Init
     init(a: Double, b: Double) {
@@ -27,18 +30,23 @@ class TriangleDistribution: IDistribution {
             let tmpR2 = (rArray.randomElement() ?? 1.0)
             triangle.append(a + (b - a) * max(tmpR1, tmpR2))
         }
+        
+        self.math = self.calculateMathExpectation(array: triangle)
+        self.dispersion = self.calculateDispertion(array: triangle, me: self.math)
+        self.standardDeviation = self.calculateStandardDeviation(dispersion: self.dispersion)
+        
         return triangle
     }
     
     func getMathEx() -> Double {
-        return 0.0
+        return self.math
     }
     
     func getDispersion() -> Double {
-        return 0.0
+        return self.dispersion
     }
     
     func getStandardDeviation() -> Double {
-        return 0.0
+        return self.standardDeviation
     }
 }

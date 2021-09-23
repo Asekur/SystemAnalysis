@@ -12,6 +12,9 @@ class SympsonDistribution: IDistribution {
     // MARK: - Properties
     private var a: Double
     private var b: Double
+    private var math: Double = 0.0
+    private var dispersion: Double = 0.0
+    private var standardDeviation: Double = 0.0
     
     // MARK: - Init
     init(a: Double, b: Double) {
@@ -29,18 +32,23 @@ class SympsonDistribution: IDistribution {
             let z = uniformDistributionX[Int.random(in: 0...uniformDistributionX.count - 1)]
             sympson.append(y + z)
         }
+        
+        self.math = self.calculateMathExpectation(array: sympson)
+        self.dispersion = self.calculateDispertion(array: sympson, me: self.math)
+        self.standardDeviation = self.calculateStandardDeviation(dispersion: self.dispersion)
+        
         return sympson
     }
     
     func getMathEx() -> Double {
-        return 0.0
+        return self.math
     }
     
     func getDispersion() -> Double {
-        return 0.0
+        return self.dispersion
     }
     
     func getStandardDeviation() -> Double {
-        return 0.0 
+        return self.standardDeviation
     }
 }

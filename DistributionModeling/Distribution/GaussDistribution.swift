@@ -14,6 +14,9 @@ class GaussDistribution: IDistribution {
     // MARK: - Properties
     private var m: Double
     private var sigma: Double
+    private var math: Double = 0.0
+    private var dispersion: Double = 0.0
+    private var standardDeviation: Double = 0.0
     
     // MARK: - Init
     init(m: Double, sigma: Double) {
@@ -33,18 +36,23 @@ class GaussDistribution: IDistribution {
             let subValue = (tmpSumR - Double(amountR) / 2.0)
             gauss.append(m + sigma * sqrt(12.0 / Double(amountR)) * subValue)
         }
+        
+        self.math = self.calculateMathExpectation(array: gauss)
+        self.dispersion = self.calculateDispertion(array: gauss, me: self.math)
+        self.standardDeviation = self.calculateStandardDeviation(dispersion: self.dispersion)
+        
         return gauss
     }
     
     func getMathEx() -> Double {
-        return m
+        return self.math
     }
     
     func getDispersion() -> Double {
-        return pow(sigma, 2.0)
+        return self.dispersion
     }
     
     func getStandardDeviation() -> Double {
-        return sigma
+        return self.standardDeviation
     }
 }
